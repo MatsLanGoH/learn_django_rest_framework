@@ -3,4 +3,4 @@
 - [x] [Tutorial 1: Serialization](https://www.django-rest-framework.org/tutorial/1-serialization/)
 - [x] [Tutorial 2: Requests and Responses](https://www.django-rest-framework.org/tutorial/2-requests-and-responses/)
 - [x] [Tutorial 3: Class-based Views](https://www.django-rest-framework.org/tutorial/3-class-based-views/)
-
+- [x] [Tutorial 4: Authentication and permissions](https://www.django-rest-framework.org/tutorial/4-authentication-and-permissions/)
