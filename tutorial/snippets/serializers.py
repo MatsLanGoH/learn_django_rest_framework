@@ -11,16 +11,7 @@ class SnippetSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Snippet
-        fields = (
-            "id",
-            "title",
-            "code",
-            "line_numbers",
-            "language",
-            "style",
-            "owner",
-            "highlighted",
-        )
+        fields = ("id", "title", "code", "line_numbers", "language", "style", "owner")
 
     owner = serializers.ReadOnlyField(source="owner.username")
 
@@ -30,6 +21,11 @@ class UserSerializer(serializers.ModelSerializer):
     Serializer for `User` model
     """
 
+    snippets = serializers.PrimaryKeyRelatedField(
+        many=True, queryset=Snippet.objects.all()
+    )
+
     class Meta:
         model = User
+        # FIXME: /users/<int:pk> returns 400
         fields = ("id", "username", "snippets")
